@@ -7,6 +7,10 @@ class EasyRsa < Formula
 
   depends_on "openssl"
 
+  devel do
+    version '3.0.3'
+  end
+
   def install
     inreplace "easyrsa3/vars.example",
               '"C:/Program Files/OpenSSL-Win32/bin/openssl.exe"',
