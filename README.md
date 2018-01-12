@@ -1,5 +1,7 @@
 # Homebrew for `easy-rsa`
 
+[![Build Status](https://travis-ci.org/riboseinc/homebrew-easy-rsa.svg?branch=master)](https://travis-ci.org/riboseinc/homebrew-easy-rsa)
+
 This tap contains formulae relating to [easy-rsa](https://github.com/OpenVPN/easy-rsa).
 
 ## Install Tap
