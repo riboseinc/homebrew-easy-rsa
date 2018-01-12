@@ -2,23 +2,6 @@
 
 This tap contains formulae relating to [easy-rsa](https://github.com/OpenVPN/easy-rsa).
 
-
-## Quick Install
-
-Run this and it's all done.
-
-``` sh
-brew tap riboseinc/easy-rsa
-brew install --HEAD easy-rsa
-```
-
-Or:
-
-``` sh
-brew install --HEAD riboseinc/easy-rsa/easy-rsa
-```
-
-
 ## Install Tap
 
 ``` sh
@@ -27,17 +10,15 @@ brew tap riboseinc/easy-rsa
 
 ## Install easy-rsa
 
-Currently it is a HEAD-only formula, i.e., you must install it using the `--HEAD` option:
-
 ``` sh
-brew install --HEAD easy-rsa
+brew install easy-rsa
 ```
 
 If the formula conflicts with one from `Homebrew/homebrew` or another
 tap, you can run:
 
 ``` sh
-brew install --HEAD riboseinc/easy-rsa/easy-rsa
+brew install riboseinc/easy-rsa/easy-rsa
 ```
 
 You can also install via URL:
