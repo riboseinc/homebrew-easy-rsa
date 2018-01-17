@@ -29,6 +29,11 @@ You can also install via URL:
 brew install --HEAD https://raw.githubusercontent.com/riboseinc/homebrew-easy-rsa/master/Formula/easy-rsa.rb
 ```
 
+NOTE: Before using `easy-rsa`, you must set `EASYRSA_SSL_CONF` as the following:
+
+``` sh
+EASYRSA_SSL_CONF="$(brew --prefix easy-rsa)/share/openssl-1.0.cnf"
+```
 
 ## Acceptable Formulae
 
