@@ -34,4 +34,10 @@ class EasyRsa < Formula
 
     bin.install_symlink share/"easyrsa" => "easyrsa"
   end
+
+  def caveats; <<-EOS.undent
+    Before using easy-rsa, you must set EASYRSA_SSL_CONF as the following:
+      EASYRSA_SSL_CONF="$(brew --prefix easy-rsa)/share/openssl-1.0.cnf"
+    EOS
+  end
 end
