@@ -13,12 +13,16 @@ class EasyRsa < Formula
 
   def install
     inreplace "easyrsa3/vars.example",
-              '"C:/Program Files/OpenSSL-Win32/bin/openssl.exe"',
-              "\"#{Formula["openssl"].opt_prefix}/bin/openssl\""
+              "#set_var EASYRSA\t\"$PWD\"",
+              "set_var EASYRSA \"#{Formula["easy-rsa"].opt_prefix}/share\""
 
     inreplace "easyrsa3/vars.example",
-              '"$EASYRSA/openssl-1.0.cnf"',
-              '"$PWD/openssl-1.0.cnf"'
+              "#set_var EASYRSA_OPENSSL\t\"openssl\"",
+              "set_var EASYRSA_OPENSSL \"#{Formula["openssl"].opt_prefix}/bin/openssl\""
+
+    inreplace "easyrsa3/easyrsa",
+              "\tlocal vars=",
+              "\tlocal vars=\"#{Formula["easy-rsa"].opt_prefix}/share/vars\""
 
     share.install %w(
       easyrsa3/easyrsa
@@ -33,5 +37,6 @@ class EasyRsa < Formula
     doc.install "README.quickstart.md"
 
     bin.install_symlink share/"easyrsa" => "easyrsa"
+    share.install share/"vars.example" => "vars"
   end
 end
