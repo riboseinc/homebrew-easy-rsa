@@ -21,8 +21,8 @@ class EasyRsa < Formula
               "set_var EASYRSA_OPENSSL \"#{Formula["openssl"].opt_prefix}/bin/openssl\""
 
     inreplace "easyrsa3/easyrsa",
-              "\tlocal vars=",
-              "\tlocal vars=\"#{Formula["easy-rsa"].opt_prefix}/share/vars\""
+              "\tlocal prog_vars=\"${0%/*}/vars\"",
+              "\tlocal prog_vars=\"#{Formula["easy-rsa"].opt_prefix}/share/vars\""
 
     share.install %w(
       easyrsa3/easyrsa
