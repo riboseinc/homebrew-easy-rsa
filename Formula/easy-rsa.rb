@@ -28,6 +28,7 @@ class EasyRsa < Formula
       easyrsa3/easyrsa
       easyrsa3/openssl-1.0.cnf
       easyrsa3/vars.example
+      easyrsa3/x509-types
     )
 
     doc.install "ChangeLog"
