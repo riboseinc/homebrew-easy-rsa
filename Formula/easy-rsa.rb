@@ -11,22 +11,27 @@ class EasyRsa < Formula
     version '3.0.4'
   end
 
-  def install
+  def install    
     inreplace "easyrsa3/vars.example",
               "#set_var EASYRSA\t\"${0%/*}\"",
-              "set_var EASYRSA \"#{Formula["easy-rsa"].opt_prefix}/share\""
+              "#set_var EASYRSA \"#{Formula["easy-rsa"].opt_prefix}/share\""    
+
+    inreplace "easyrsa3/vars.example",
+              "#set_var EASYRSA_OPENSSL\t\"openssl\"",
+              "#set_var EASYRSA_OPENSSL \"#{Formula["openssl"].opt_prefix}/bin/openssl\""
 
     inreplace "easyrsa3/easyrsa",
               "set_var EASYRSA\t\t\"${0%/*}\"",
               "set_var EASYRSA \"#{Formula["easy-rsa"].opt_prefix}/share\""
 
-    inreplace "easyrsa3/vars.example",
-              "#set_var EASYRSA_OPENSSL\t\"openssl\"",
+    inreplace "easyrsa3/easyrsa",
+              "set_var EASYRSA_OPENSSL\topenssl",
               "set_var EASYRSA_OPENSSL \"#{Formula["openssl"].opt_prefix}/bin/openssl\""
 
     inreplace "easyrsa3/easyrsa",
-              "set_var EASYRSA_OPENSSL\topenssl",
-              "set_var EASYRSA_OPENSSL \"#{Formula["openssl"].opt_prefix}/bin/openssl\""    
+              "\tprog_vars=\"${0%/*}/vars\"",
+              "\tprog_vars=\"#{Formula["easy-rsa"].opt_prefix}/share/vars\""
+
 
     share.install %w(
       easyrsa3/easyrsa
@@ -42,6 +47,5 @@ class EasyRsa < Formula
     doc.install "README.quickstart.md"
 
     bin.install_symlink share/"easyrsa" => "easyrsa"
-    # share.install share/"vars.example" => "vars.example"
   end
 end
