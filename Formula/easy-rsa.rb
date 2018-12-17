@@ -5,8 +5,6 @@ class EasyRsa < Formula
   sha256 "01d0a0b0105fb80742455cef8b6336fcb67bf69c8675d3bbd66fdf741fd6d34f"
   head "https://github.com/OpenVPN/easy-rsa.git"
 
-  depends_on "openssl"
-
   devel do
     version '3.0.4'
   end
@@ -16,17 +14,9 @@ class EasyRsa < Formula
               "#set_var EASYRSA\t\"${0%/*}\"",
               "#set_var EASYRSA \"#{Formula["easy-rsa"].opt_prefix}/share\""    
 
-    inreplace "easyrsa3/vars.example",
-              "#set_var EASYRSA_OPENSSL\t\"openssl\"",
-              "#set_var EASYRSA_OPENSSL \"#{Formula["openssl"].opt_prefix}/bin/openssl\""
-
     inreplace "easyrsa3/easyrsa",
               "set_var EASYRSA\t\t\"${0%/*}\"",
               "set_var EASYRSA \"#{Formula["easy-rsa"].opt_prefix}/share\""
-
-    inreplace "easyrsa3/easyrsa",
-              "set_var EASYRSA_OPENSSL\topenssl",
-              "set_var EASYRSA_OPENSSL \"#{Formula["openssl"].opt_prefix}/bin/openssl\""
 
     inreplace "easyrsa3/easyrsa",
               "\tprog_vars=\"${0%/*}/vars\"",
