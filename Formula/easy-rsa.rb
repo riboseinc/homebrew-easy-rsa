@@ -5,10 +5,6 @@ class EasyRsa < Formula
   sha256 "2a87c0c617bbfab556c541b83fa5bfdf1c244bfb16b530ca12efb3d979e85191"
   head "https://github.com/OpenVPN/easy-rsa.git"
 
-  devel do
-    version '3.0.6'
-  end
-
   def install    
     inreplace "easyrsa3/vars.example",
               "#set_var EASYRSA\t\"${0%/*}\"",
