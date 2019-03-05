@@ -1,12 +1,12 @@
 class EasyRsa < Formula
   desc "Homebrew formula for `easy-rsa`"
   homepage 'https://github.com/OpenVPN/easy-rsa'
-  url "https://github.com/OpenVPN/easy-rsa/archive/v3.0.5.tar.gz"
-  sha256 "01d0a0b0105fb80742455cef8b6336fcb67bf69c8675d3bbd66fdf741fd6d34f"
+  url "https://github.com/OpenVPN/easy-rsa/archive/v3.0.6.tar.gz"
+  sha256 "2a87c0c617bbfab556c541b83fa5bfdf1c244bfb16b530ca12efb3d979e85191"
   head "https://github.com/OpenVPN/easy-rsa.git"
 
   devel do
-    version '3.0.4'
+    version '3.0.6'
   end
 
   def install    
