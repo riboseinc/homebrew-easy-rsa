@@ -29,4 +29,11 @@ class EasyRsa < Formula
 
     bin.install_symlink share/"easyrsa" => "easyrsa"
   end
+
+  test do
+    # Create a stub PKI directory in the test sandbox.
+    ENV["EASYRSA_PKI"] = testpath/"pki"
+    system bin/"easyrsa", "--help"
+    system bin/"easyrsa", "init-pki"
+  end
 end
