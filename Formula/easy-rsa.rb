@@ -11,12 +11,8 @@ class EasyRsa < Formula
               "#set_var EASYRSA \"#{Formula["easy-rsa"].opt_prefix}/share\""
 
     inreplace "easyrsa3/easyrsa",
-              "set_var EASYRSA\t\t\"$prog_dir\"",
-              "set_var EASYRSA \"#{Formula["easy-rsa"].opt_prefix}/share\""
-
-    inreplace "easyrsa3/easyrsa",
-              "\tprog_vars=\"${prog_dir}/vars\"",
-              "\tprog_vars=\"#{Formula["easy-rsa"].opt_prefix}/share/vars\""
+              "\tprog_dir=\"${prog_file%/*}\"",
+              "\tprog_dir=\"#{Formula["easy-rsa"].opt_prefix}/share\""
 
     share.install %w[
       easyrsa3/easyrsa
