@@ -31,9 +31,6 @@ class EasyRsa < Formula
   end
 
   test do
-    # Create a stub PKI directory in the test sandbox.
-    ENV["EASYRSA_PKI"] = testpath/"pki"
-    system bin/"easyrsa", "--help"
-    system bin/"easyrsa", "init-pki"
+    assert_match "init-pki complete", shell_output("#{bin}/easyrsa init-pki")
   end
 end
