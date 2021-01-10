@@ -1,5 +1,9 @@
 # Homebrew for `easy-rsa`
 
+This formula is now deprecated as it has been [incorporated into homebrew-core](https://github.com/Homebrew/homebrew-core/pull/64219).
+*Please directly use `brew install easy-rsa` from now on*.
+Thanks for your support!
+
 [![Build Status](https://travis-ci.org/riboseinc/homebrew-easy-rsa.svg?branch=master)](https://travis-ci.org/riboseinc/homebrew-easy-rsa)
 
 This tap contains formulae relating to [easy-rsa](https://github.com/OpenVPN/easy-rsa).
